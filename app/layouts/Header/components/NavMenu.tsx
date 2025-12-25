@@ -16,17 +16,15 @@ const NavMenu = () => {
 
   return (
     <nav>
-      {/* Бургер (мобилки) */}
       <button
         className="md:hidden p-2 relative z-50"
         onClick={() => setIsOpen(true)}
       >
-        <div className="w-6 h-0.5 bg-black mb-1" />
-        <div className="w-6 h-0.5 bg-black mb-1" />
-        <div className="w-6 h-0.5 bg-black" />
+        <div className="w-8 h-0.5 bg-black mb-1.5" />
+        <div className="w-8 h-0.5 bg-black mb-1.5" />
+        <div className="w-8 h-0.5 bg-black" />
       </button>
 
-      {/* Десктоп меню */}
       <ul className="hidden md:flex gap-4 text-lg">
         {menuItems.map((item) => (
           <li key={item.name}>
@@ -40,10 +38,8 @@ const NavMenu = () => {
         ))}
       </ul>
 
-      {/* Мобильная модалка */}
       {isOpen && (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60 backdrop-blur-sm md:hidden">
-          {/* Кнопка закрытия */}
           <button
             className="absolute top-6 right-6 text-white text-3xl"
             onClick={() => setIsOpen(false)}
@@ -51,7 +47,6 @@ const NavMenu = () => {
             ✕
           </button>
 
-          {/* Меню */}
           <ul className="flex flex-col items-center gap-6 text-2xl bg-white p-10 rounded-xl">
             {menuItems.map((item) => (
               <li key={item.name}>
