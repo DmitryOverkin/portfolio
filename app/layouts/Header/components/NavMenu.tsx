@@ -1,7 +1,10 @@
 "use client";
 
-import {useState} from "react";
+import {useState, useRef} from "react";
+import {useGSAP} from "@gsap/react";
 import Link from "next/link";
+
+import gsap from "gsap";
 
 const menuItems = [
   {name: "Home", to: "#top"},
@@ -14,9 +17,29 @@ const menuItems = [
 const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const burgerRef = useRef(null);
+  const navLinksRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(burgerRef.current, {
+      y: -50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power1.inOut",
+    });
+
+    gsap.from(navLinksRef.current, {
+      y: -50,
+      opacity: 0,
+      duration: 0.8,
+      ease: "power1.inOut",
+    });
+  }, []);
+
   return (
     <nav>
       <button
+        ref={burgerRef}
         className="md:hidden p-2 relative z-50"
         onClick={() => setIsOpen(true)}
       >
@@ -25,7 +48,7 @@ const NavMenu = () => {
         <div className="w-8 h-0.5 bg-black" />
       </button>
 
-      <ul className="hidden md:flex gap-4 text-lg">
+      <ul ref={navLinksRef} className="hidden md:flex gap-4 text-lg">
         {menuItems.map((item) => (
           <li key={item.name}>
             <Link
