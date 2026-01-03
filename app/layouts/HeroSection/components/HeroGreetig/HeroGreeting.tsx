@@ -1,6 +1,30 @@
+"use client";
+
+import gsap from "gsap";
+import {useGSAP} from "@gsap/react";
+import {useRef} from "react";
+
 const HeroGreeting = () => {
+  const textRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.from(textRef.current, {
+      x: 50,
+      opacity: 0,
+      duration: 1.5,
+      ease: "power1.inOut",
+    });
+  }, []);
+
   return (
-    <p className="w-full max-w-80 text-right">
+    <p
+      ref={textRef}
+      className="w-full text-xl max-w-80 text-right 
+    md:flex md:items-end 
+    lg:block  lg:text-base
+    xl:text-xl
+    "
+    >
       Hi, I&apos;m Dmitry, A software developer. <br /> I specialize in building
       modern,
       <br /> user-friendly web applications.
