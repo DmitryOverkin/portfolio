@@ -11,7 +11,8 @@ const HeroGreeting = () => {
     gsap.from(textRef.current, {
       x: 50,
       opacity: 0,
-      duration: 1.5,
+      duration: 1.2,
+      scale: 0.9,
       ease: "power1.inOut",
     });
   }, []);

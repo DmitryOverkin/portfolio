@@ -12,9 +12,10 @@ const HeroImage = () => {
   useGSAP(() => {
     gsap.from(imgRef.current, {
       x: 50,
-      duration: 1.2,
+      duration: 1,
       opacity: 0,
       ease: "power1.inOut",
+      scale: 0.9
     });
   }, []);
 

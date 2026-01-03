@@ -13,6 +13,7 @@ const HeroTitle = () => {
       opacity: 0,
       duration: 0.8,
       ease: "power1.inOut",
+      scale: 0.9,
     });
   }, []);
 
