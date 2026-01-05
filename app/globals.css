@@ -8,4 +8,19 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
+#smooth-wrapper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
 
+#smooth-content {
+  will-change: transform;
+}
+
+main {
+  height: 200vh;
+}
