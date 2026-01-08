@@ -6,13 +6,20 @@ import {useGSAP} from "@gsap/react";
 import Link from "next/link";
 import gsap from "gsap";
 import {ScrollSmoother} from "gsap/ScrollSmoother";
-import { menuItems } from "@/app/data";
+import {menuItems} from "@/app/data";
 
 const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  // Инициализируем сразу document.body — это безопасно на клиенте
   const [portalContainer, setPortalContainer] = useState<HTMLElement | null>(
-    null
+    () => {
+      if (typeof window !== "undefined") {
+        return document.body;
+      }
+      return null;
+    }
   );
 
   const burgerRef = useRef<HTMLButtonElement | null>(null);
@@ -33,10 +40,6 @@ const NavMenu = () => {
       duration: 0.8,
       ease: "power1.inOut",
     });
-  }, []);
-
-  useEffect(() => {
-    setPortalContainer(document.body);
   }, []);
 
   useEffect(() => {
