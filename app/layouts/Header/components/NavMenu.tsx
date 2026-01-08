@@ -12,7 +12,6 @@ const NavMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Инициализируем сразу document.body — это безопасно на клиенте
   const [portalContainer, setPortalContainer] = useState<HTMLElement | null>(
     () => {
       if (typeof window !== "undefined") {

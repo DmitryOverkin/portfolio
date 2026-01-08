@@ -4,72 +4,74 @@ import {useRef} from "react";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {useGSAP} from "@gsap/react";
-
 import {aboutText} from "@/app/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AboutContent = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
+type AboutContentProps = {
+  blockCount: number;
+};
+
+const AboutContent = ({blockCount}: AboutContentProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const blocksRef = useRef<HTMLDivElement[]>([]);
 
   useGSAP(
     () => {
-      const section = sectionRef.current;
-      if (!section) return;
-
       const blocks = blocksRef.current;
+      if (blocks.length === 0) return;
 
-      blocks.forEach((block) => {
-        gsap.set(block, {
-          y: 120,
-          autoAlpha: 0,
-        });
-      });
+      gsap.set(blocks[0], {autoAlpha: 1, y: 0});
+      gsap.set(blocks.slice(1), {autoAlpha: 0, y: 80});
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: section,
+          trigger: containerRef.current,
           start: "top top",
-          end: `+=${blocks.length * 120}%`,
-          scrub: true,
-          pin: true,
-          anticipatePin: 1,
+          end: `+=${(blockCount - 1) * 100}%`,
+          scrub: 1,
+          pin: false,
         },
       });
 
-      blocks.forEach((block, i) => {
-        const tlStep = 1;
+      for (let i = 0; i < blockCount - 1; i++) {
+        const currentBlock = blocks[i];
+        const nextBlock = blocks[i + 1];
 
         tl.to(
-          block,
+          currentBlock,
           {
-            keyframes: [
-              {y: 0, autoAlpha: 1, duration: 0.6},
-              {y: 0, autoAlpha: 1, duration: 0.4},
-              {y: -120, autoAlpha: 0, duration: 0.6},
-            ],
-            ease: "none",
+            y: -80,
+            autoAlpha: 0,
+            duration: 0.8,
+            ease: "power2.inOut",
           },
-          i * tlStep
+          i + 0.1
         );
-      });
+
+        tl.to(
+          nextBlock,
+          {
+            y: 0,
+            autoAlpha: 1,
+            duration: 0.8,
+            ease: "power2.inOut",
+          },
+          i + 0.1
+        );
+      }
     },
-    {scope: sectionRef}
+    {scope: containerRef, dependencies: [blockCount]}
   );
 
   return (
-    <div
-      id="about"
-      ref={sectionRef}
-      className="relative h-[100svh] w-full overflow-hidden"
-    >
+    <div ref={containerRef} className="relative h-full w-full">
       <video
         autoPlay
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover will-change-transform"
       >
         <source src="/about/about-bg-video.mp4" type="video/mp4" />
       </video>
