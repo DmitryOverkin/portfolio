@@ -4,7 +4,7 @@ import HeroTitle from "./components/HeroTitle/HeroTitle";
 
 const HeroSection = () => {
   return (
-    <div
+    <section
       className="flex flex-col justify-between items-center gap-8 h-full max-h-screen 
     md:items-stretch md:flex-row"
     >
@@ -13,7 +13,7 @@ const HeroSection = () => {
         <HeroImage />
         <HeroGreeting />
       </div>
-    </div>
+    </section>
   );
 };
 

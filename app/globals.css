@@ -20,7 +20,3 @@ body {
 #smooth-content {
   will-change: transform;
 }
-
-main {
-  height: 200vh;
-}

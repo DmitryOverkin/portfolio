@@ -43,7 +43,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <section ref={skillsRef} className="my-10">
+    <section ref={skillsRef} className="my-10 py-12">
       <div className="w-full overflow-hidden">
         <div ref={trackRef} className="flex gap-4 w-max will-change-transform">
           {[...skills, ...skills].map((skill, index) => (

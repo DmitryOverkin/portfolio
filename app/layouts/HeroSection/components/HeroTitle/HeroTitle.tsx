@@ -20,7 +20,7 @@ const HeroTitle = () => {
   return (
     <h1
       ref={h1Ref}
-      className="text-7xl w-full max-w-96 text-center 
+      className="text-6xl w-full max-w-96 text-center 
                 md:text-8xl md:text-left md:max-w-[450px] md:flex md:items-center 
                 lg:items-end lg:max-w-[700px] lg:text-9xl
                 2xl:text-[180px] 2xl:max-w-220"

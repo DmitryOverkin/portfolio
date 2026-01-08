@@ -1,9 +1,22 @@
-interface Skill {
+interface INavItems {
+  name: string;
+  to: string;
+}
+
+export const menuItems: INavItems[] = [
+  {name: "Home", to: "#top"},
+  {name: "About me", to: "#about"},
+  {name: "Experience", to: "#experience"},
+  {name: "Portfolio", to: "#portfolio"},
+  {name: "Contact", to: "#contact"},
+];
+
+interface ISkill {
   name: string;
   skillIcon: string;
 }
 
-export const skills: Skill[] = [
+export const skills: ISkill[] = [
   {name: "HTML", skillIcon: "/skills-icons/html-logo.svg"},
   {name: "CSS", skillIcon: "/skills-icons/css-logo.svg"},
   {name: "JavaScript", skillIcon: "/skills-icons/js-logo.svg"},
@@ -18,4 +31,53 @@ export const skills: Skill[] = [
   {name: "Pinia", skillIcon: "/skills-icons/pinia-logo.svg"},
   {name: "Linux", skillIcon: "/skills-icons/linux-logo.svg"},
   {name: "Tailwind", skillIcon: "/skills-icons/tailwind-logo.svg"},
+];
+
+interface IAboutText {
+  blockText: string[];
+}
+
+export const aboutText: IAboutText[] = [
+  {
+    blockText: [
+      "I’m a frontend developer who builds clean, fast, and interactive interfaces.",
+      "I focus on user experience, performance, and details that make products feel alive.",
+    ],
+  },
+  {
+    blockText: [
+      "I enjoy turning complex ideas into simple, intuitive interfaces.",
+      "My main stack is modern frontend — React, TypeScript, animations, and responsive design",
+    ],
+  },
+  {
+    blockText: [
+      "I also work with microcontrollers and hardware.",
+      "This helps me think beyond the screen and design systems, not just visuals.",
+    ],
+  },
+  {
+    blockText: [
+      "Discipline matters to me — in code and in life.",
+      "Training in the gym taught me consistency, focus, and long-term thinking.",
+    ],
+  },
+  {
+    blockText: [
+      "I’m constantly learning.",
+      "New technologies, better patterns, deeper understanding — every day.",
+    ],
+  },
+  {
+    blockText: [
+      "An active lifestyle keeps my energy high and my mind clear.",
+      "Movement fuels creativity and better problem-solving.",
+    ],
+  },
+  {
+    blockText: [
+      "I build digital experiences where code, motion, and logic come together.",
+      "Let’s create something meaningful!",
+    ],
+  },
 ];
