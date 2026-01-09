@@ -23,14 +23,26 @@ export default function Home() {
 
     ScrollTrigger.refresh();
 
-    return () => smoother.kill();
+    const onLoad = () => {
+      ScrollTrigger.refresh(true);
+    };
+
+    window.addEventListener("load", onLoad);
+
+    return () => {
+      window.removeEventListener("load", onLoad);
+      smoother.kill();
+    };
   }, []);
 
   return (
     <>
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <div id="top" className="w-full max-w-[1920px] px-12 mx-auto relative top-0 left-0 z-50">
+          <div
+            id="top"
+            className="w-full max-w-[1920px] px-12 mx-auto relative top-0 left-0 z-50"
+          >
             <Header />
           </div>
           <main>

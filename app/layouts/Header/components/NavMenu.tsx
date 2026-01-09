@@ -100,6 +100,21 @@ const NavMenu = () => {
           <li key={item.name}>
             <Link
               href={item.to}
+              onClick={(e) => {
+                e.preventDefault();
+
+                const smoother = ScrollSmoother.get();
+                if (smoother) {
+                  const target = document.querySelector(item.to);
+                  if (target) {
+                    smoother.scrollTo(target, true, "top top");
+                  }
+                } else {
+                  document
+                    .querySelector(item.to)
+                    ?.scrollIntoView({behavior: "smooth"});
+                }
+              }}
               className="relative p-1 text-black before:absolute before:inset-0 before:bg-[hsl(45_100%_80%)] before:opacity-0 before:transition hover:before:opacity-100 before:z-[-1]"
             >
               {item.name}
@@ -124,7 +139,23 @@ const NavMenu = () => {
                   <Link
                     href={item.to}
                     className="relative p-2 text-black before:absolute before:inset-0 before:bg-[hsl(45_100%_80%)] before:opacity-0 before:transition hover:before:opacity-100 before:z-[-1]"
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      e.preventDefault();
+
+                      const smoother = ScrollSmoother.get();
+                      if (smoother) {
+                        const target = document.querySelector(item.to);
+                        if (target) {
+                          smoother.scrollTo(target, true, "top top");
+                        }
+                      } else {
+                        document
+                          .querySelector(item.to)
+                          ?.scrollIntoView({behavior: "smooth"});
+                      }
+
+                      setIsOpen(false);
+                    }}
                   >
                     {item.name}
                   </Link>

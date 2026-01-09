@@ -61,7 +61,7 @@ const AboutSection = () => {
       ScrollTrigger.create({
         trigger: section,
         start: "top top",
-        end: `+=${(aboutText.length - 1) * 80}%`,
+        end: `+=${aboutText.length * 100}%`,
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
@@ -72,7 +72,7 @@ const AboutSection = () => {
   );
 
   useLayoutEffect(() => {
-    ScrollTrigger.refresh();
+    ScrollTrigger.refresh(true);
   }, []);
 
   return (
@@ -87,7 +87,7 @@ const AboutSection = () => {
       <div
         id="about"
         ref={sectionRef}
-        className="relative h-[100svh] w-full overflow-hidden mt-12 will-change-transform"
+        className="relative h-[100svh] w-full overflow-hidden mt-12 will-change-transform pointer-events-none"
       >
         <div
           ref={videoContainerRef}
