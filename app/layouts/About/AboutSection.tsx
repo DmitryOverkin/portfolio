@@ -4,29 +4,41 @@ import SectionLogo from "@/app/components/SectionLogo/SectionLogo";
 import AboutContent from "./components/AboutContent/AboutContent";
 import gsap from "gsap";
 import {useGSAP} from "@gsap/react";
-import {useRef, useLayoutEffect} from "react";
+import {useRef, useLayoutEffect, useState} from "react";
+import {useMediaQuery} from "react-responsive";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {aboutText} from "@/app/data";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
+  const isMobile = useMediaQuery({maxWidth: 768});
   const sectionRef = useRef<HTMLDivElement>(null);
   const logoRef = useRef<HTMLDivElement>(null);
   const videoContainerRef = useRef<HTMLDivElement>(null);
 
+
+  const [isMobileState, setIsMobileState] = useState(false);
+  useLayoutEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMobileState(isMobile);
+  }, [isMobile]);
+
   useGSAP(
     () => {
+      if (!sectionRef.current) return;
+
       const section = sectionRef.current;
       const videoContainer = videoContainerRef.current;
-      if (!section) return;
 
+     
       gsap.set(section, {force3D: true});
       if (videoContainer) {
         gsap.set(videoContainer, {force3D: true});
         gsap.set(videoContainer.querySelector("video"), {force3D: true});
       }
 
+     
       gsap.fromTo(
         logoRef.current,
         {y: 50, opacity: 0},
@@ -37,7 +49,7 @@ const AboutSection = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 85%",
+            start: "top 60%",
             toggleActions: "play none none reverse",
           },
         }
@@ -52,23 +64,25 @@ const AboutSection = () => {
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 85%",
+            start: "top 60%",
             toggleActions: "play none none reverse",
           },
         }
       );
 
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        end: `+=${aboutText.length * 100}%`,
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
-        pinType: "transform",
-      });
+      if (!isMobileState) {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top top",
+          end: `+=${aboutText.length * 120}%`, 
+          pin: true,
+          pinSpacing: true,
+          anticipatePin: 1,
+          pinType: "transform",
+        });
+      }
     },
-    {scope: sectionRef}
+    {scope: sectionRef, dependencies: [isMobileState]}
   );
 
   useLayoutEffect(() => {
@@ -87,7 +101,7 @@ const AboutSection = () => {
       <div
         id="about"
         ref={sectionRef}
-        className="relative h-[100svh] w-full overflow-hidden mt-12 will-change-transform pointer-events-none"
+        className="relative h-[100svh] w-full overflow-hidden mt-12 will-change-transform"
       >
         <div
           ref={videoContainerRef}

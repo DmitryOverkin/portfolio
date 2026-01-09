@@ -28,7 +28,7 @@ const AboutContent = ({blockCount}: AboutContentProps) => {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "top top",
-          end: `+=${(blockCount - 1) * 100}%`,
+          end: `+=${(blockCount - 1) * 120}%`,
           scrub: 1,
           pin: false,
         },
