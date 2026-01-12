@@ -63,7 +63,7 @@ export default function AboutContent({blockCount}: {blockCount: number}) {
 
       <div className="absolute inset-0 bg-black/50 z-10" />
 
-      <div className="relative z-20 w-full h-full">
+      <div className="relative z-20 w-full h-full max-w-[1920px] px-12 mx-auto">
         {aboutText.map((item, i) => (
           <div
             key={i}

@@ -25,7 +25,7 @@ export default function Home() {
 
         <AboutSection />
 
-        <div className="w-full max-w-[1920px] px-12 mx-auto mt-12">
+        <div className="w-full max-w-[1920px] px-12 mx-auto mb-12 h-full">
           <ExperienceSection />
         </div>
       </main>

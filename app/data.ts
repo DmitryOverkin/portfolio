@@ -81,3 +81,46 @@ export const aboutText: IAboutText[] = [
     ],
   },
 ];
+
+export interface IExperience {
+  id: number;
+  title: string;
+  company: string;
+  description: string;
+  period: string;
+}
+
+export const experience: IExperience[] = [
+  {
+    id: 1,
+    title: "B.Sc. in Computer Security",
+    company: "Tver State University",
+    description:
+      "Studied applied mathematics and computer security, focusing on information protection, cryptography, and secure system design.",
+    period: "2019 – 2025",
+  },
+  {
+    id: 2,
+    title: "Front-End Developer Intern",
+    company: "Salt and Pepper IT",
+    description:
+      "Worked on real-world web applications, building UI components, improving UX, and collaborating with designers and backend developers.",
+    period: "2024 – 2025",
+  },
+  {
+    id: 3,
+    title: "Lead Engineer",
+    company: "GK 'Innotech'",
+    description:
+      "Led technical projects, coordinated development tasks, and ensured system reliability while working closely with development and infrastructure teams.",
+    period: "2024 – 2025",
+  },
+  {
+    id: 4,
+    title: "Front-End Developer",
+    company: "TMH Engineering",
+    description:
+      "Developing modern web interfaces, animations, and interactive UI using React, TypeScript, and modern front-end tooling.",
+    period: "2025 – Now",
+  },
+];
