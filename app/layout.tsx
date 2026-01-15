@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import {Rubik} from "next/font/google";
+import type {ReactNode} from "react";
 
 import "./globals.css";
 
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en" className={rubik.className}>
@@ -23,6 +24,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-
-

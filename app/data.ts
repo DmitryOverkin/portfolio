@@ -102,7 +102,7 @@ export const experience: IExperience[] = [
   {
     id: 2,
     title: "Front-End Developer Intern",
-    company: "Salt and Pepper IT",
+    company: "Salt & Pepper IT",
     description:
       "Worked on real-world web applications, building UI components, improving UX, and collaborating with designers and backend developers.",
     period: "2024 – 2025",
@@ -110,7 +110,7 @@ export const experience: IExperience[] = [
   {
     id: 3,
     title: "Lead Engineer",
-    company: "GK 'Innotech'",
+    company: "GoC 'Innotech'",
     description:
       "Led technical projects, coordinated development tasks, and ensured system reliability while working closely with development and infrastructure teams.",
     period: "2024 – 2025",
