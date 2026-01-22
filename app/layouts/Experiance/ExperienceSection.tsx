@@ -36,7 +36,7 @@ const ExperienceSection = () => {
           gsap.set(cardsContainerRef.current, {
             overflowY: "hidden",
             height: "auto",
-            maxHeight: "100vh",
+            maxHeight: "fit-content",
           });
         }
       });
@@ -50,11 +50,11 @@ const ExperienceSection = () => {
         }
       });
     },
-    {scope: sectionRef}
+    {scope: sectionRef},
   );
 
   return (
-    <section id="experience" className="py-15">
+    <section id="experience" className="pt-15 pb-10">
       <div ref={sectionRef}>
         <div className="mb-12">
           <SectionLogo name="Experience" />

@@ -5,6 +5,7 @@ import HeroSection from "./layouts/HeroSection/HeroSection";
 import Skills from "./layouts/Skills/Skillls";
 import AboutSection from "./layouts/About/AboutSection";
 import ExperienceSection from "./layouts/Experiance/ExperienceSection";
+import ProjectsSection from "./layouts/ProjectsSection/ProjectsSection";
 
 export default function Home() {
   return (
@@ -27,6 +28,10 @@ export default function Home() {
 
         <div className="w-full max-w-[1920px] px-12 mx-auto mb-12 h-full">
           <ExperienceSection />
+        </div>
+
+        <div className="w-full max-w-[1920px] px-12 mx-auto mb-12 h-full">
+          <ProjectsSection />
         </div>
       </main>
     </>

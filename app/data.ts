@@ -124,3 +124,37 @@ export const experience: IExperience[] = [
     period: "2025 – Now",
   },
 ];
+
+// portfolio
+
+export interface Iprojects {
+  id: number;
+  href: string;
+  bgImageSrc: string;
+  title: string;
+  technologies: string[];
+}
+
+export const projects: Iprojects[] = [
+  {
+    id: 1,
+    href: "https://portfolio-kappa-gilt-paz2xlvdvo.vercel.app/",
+    bgImageSrc: "/projects/portfolio-image.jpg",
+    title: "Portfolio Website",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
+  },
+  {
+    id: 2,
+    href: "https://dmitryoverkin.github.io/Let-s-Fly/",
+    bgImageSrc: "/projects/lets-fly-image.jpg",
+    title: "Let's Fly Website",
+    technologies: ["JavaScript", "GSAP", "Scss", "Prepros"],
+  },
+  {
+    id: 3,
+    href: "https://dmitryoverkin.github.io/YourTour-SNP_FE_intership/",
+    bgImageSrc: "/projects/your-tour-image.jpg",
+    title: "Yout Tour Website",
+    technologies: ["JavaScript", "Scss", "HTML", "Gulp"],
+  },
+];
