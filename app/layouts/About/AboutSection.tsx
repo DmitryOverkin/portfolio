@@ -44,7 +44,7 @@ export default function AboutSection() {
   return (
     <section ref={sectionRef} className="relative w-full">
       <div className="about-logo w-full max-w-[1920px] px-12 mx-auto">
-        <SectionLogo name="About Me" />
+        <SectionLogo name="Обо мне" />
       </div>
 
       <div

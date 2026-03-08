@@ -26,9 +26,9 @@ const HeroGreeting = () => {
     xl:text-xl
     "
     >
-      Hi, I&apos;m Dmitry, A software developer. <br /> I specialize in building
-      modern,
-      <br /> user-friendly web applications.
+      Привет, меня зовут Дмитрий, я разработчик программного обеспечения. <br />{" "}
+      Я специализируюсь на создании современных,
+      <br /> удобных для пользователя веб-приложений.
     </p>
   );
 };

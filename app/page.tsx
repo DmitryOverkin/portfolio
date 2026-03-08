@@ -6,6 +6,7 @@ import Skills from "./layouts/Skills/Skillls";
 import AboutSection from "./layouts/About/AboutSection";
 import ExperienceSection from "./layouts/Experiance/ExperienceSection";
 import ProjectsSection from "./layouts/ProjectsSection/ProjectsSection";
+import Contact from "./layouts/Contact/Contact";
 
 export default function Home() {
   return (
@@ -26,12 +27,16 @@ export default function Home() {
 
         <AboutSection />
 
-        <div className="w-full max-w-[1920px] px-12 mx-auto mb-12 h-full">
+        <div className="w-full max-w-[1920px] px-12 mx-auto">
           <ExperienceSection />
         </div>
 
-        <div className="w-full max-w-[1920px] px-12 mx-auto mb-12 h-full">
+        <div className="w-full max-w-[1920px] px-12 mx-auto mb-12">
           <ProjectsSection />
+        </div>
+
+        <div className="w-full max-w-[1920px] px-12 mx-auto mb-12">
+          <Contact />
         </div>
       </main>
     </>

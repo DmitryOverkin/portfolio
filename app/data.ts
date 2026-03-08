@@ -4,11 +4,11 @@ interface INavItems {
 }
 
 export const menuItems: INavItems[] = [
-  {name: "Home", to: "#top"},
-  {name: "About me", to: "#about"},
-  {name: "Experience", to: "#experience"},
-  {name: "Portfolio", to: "#portfolio"},
-  {name: "Contact", to: "#contact"},
+  {name: "Начало", to: "#top"},
+  {name: "Обо мне", to: "#about"},
+  {name: "Опыт", to: "#experience"},
+  {name: "Портфолио", to: "#portfolio"},
+  {name: "Связаться", to: "#contact"},
 ];
 
 interface ISkill {
@@ -40,44 +40,44 @@ interface IAboutText {
 export const aboutText: IAboutText[] = [
   {
     blockText: [
-      "I’m a frontend developer who builds clean, fast, and interactive interfaces.",
-      "I focus on user experience, performance, and details that make products feel alive.",
+      "Я frontend-разработчик, создающий быстрые, чистые и интерактивные интерфейсы.",
+      "Моя цель — делать продукты удобными, производительными и визуально точными.",
     ],
   },
   {
     blockText: [
-      "I enjoy turning complex ideas into simple, intuitive interfaces.",
-      "My main stack is modern frontend — React, TypeScript, animations, and responsive design",
+      "Я превращаю сложные идеи в простые и понятные пользовательские интерфейсы.",
+      "Основной стек: React, TypeScript, современный CSS, анимации и адаптивная разработка.",
     ],
   },
   {
     blockText: [
-      "I also work with microcontrollers and hardware.",
-      "This helps me think beyond the screen and design systems, not just visuals.",
+      "Также работаю с микроконтроллерами и аппаратными проектами.",
+      "Это помогает мне мыслить системно и понимать продукты шире, чем только на уровне интерфейса.",
     ],
   },
   {
     blockText: [
-      "Discipline matters to me — in code and in life.",
-      "Training in the gym taught me consistency, focus, and long-term thinking.",
+      "Для меня важны дисциплина и качество работы.",
+      "Опыт регулярных тренировок сформировал привычку к последовательности и долгосрочному развитию.",
     ],
   },
   {
     blockText: [
-      "I’m constantly learning.",
-      "New technologies, better patterns, deeper understanding — every day.",
+      "Я постоянно развиваюсь как разработчик.",
+      "Изучаю новые технологии, архитектурные подходы и лучшие практики фронтенд-разработки.",
     ],
   },
   {
     blockText: [
-      "An active lifestyle keeps my energy high and my mind clear.",
-      "Movement fuels creativity and better problem-solving.",
+      "Активный образ жизни помогает сохранять концентрацию и продуктивность.",
+      "Баланс между работой и движением поддерживает ясность мышления и креативность.",
     ],
   },
   {
     blockText: [
-      "I build digital experiences where code, motion, and logic come together.",
-      "Let’s create something meaningful!",
+      "Я создаю цифровые продукты, где код, анимация и логика работают как единая система.",
+      "Открыт к сотрудничеству и интересным проектам.",
     ],
   },
 ];
@@ -93,35 +93,35 @@ export interface IExperience {
 export const experience: IExperience[] = [
   {
     id: 1,
-    title: "B.Sc. in Computer Security",
-    company: "Tver State University",
+    title: "Специалитет по компьютерной безопасности",
+    company: "Тверской государственный университет",
     description:
-      "Studied applied mathematics and computer security, focusing on information protection, cryptography, and secure system design.",
+      "Изучал прикладную математику и компьютерную безопасность с фокусом на защиту информации, криптографию и проектирование защищённых систем.",
     period: "2019 – 2025",
   },
   {
     id: 2,
-    title: "Front-End Developer Intern",
+    title: "Стажёр Фронтенд-разработчик",
     company: "Salt & Pepper IT",
     description:
-      "Worked on real-world web applications, building UI components, improving UX, and collaborating with designers and backend developers.",
+      "Работал над реальными веб-приложениями: разрабатывал UI-компоненты, улучшал пользовательский опыт и взаимодействовал с дизайнерами и backend-разработчиками.",
     period: "2024 – 2025",
   },
   {
     id: 3,
-    title: "Lead Engineer",
-    company: "GoC 'Innotech'",
+    title: "Ведущий инженер",
+    company: "ГК «Иннотех»",
     description:
-      "Led technical projects, coordinated development tasks, and ensured system reliability while working closely with development and infrastructure teams.",
+      "Руководил техническими проектами, координировал задачи разработки и обеспечивал надёжность систем, работая совместно с командами разработки и инфраструктуры.",
     period: "2024 – 2025",
   },
   {
     id: 4,
-    title: "Front-End Developer",
-    company: "TMH Engineering",
+    title: "Инжинер-программист",
+    company: "ТМХ «Инжиниринг»",
     description:
-      "Developing modern web interfaces, animations, and interactive UI using React, TypeScript, and modern front-end tooling.",
-    period: "2025 – Now",
+      "Разрабатываю современные веб-интерфейсы, анимации и интерактивные UI с использованием React, TypeScript и современных инструментов фронтенд-разработки.",
+    period: "2025 – настоящее время",
   },
 ];
 
@@ -140,21 +140,21 @@ export const projects: Iprojects[] = [
     id: 1,
     href: "https://portfolio-kappa-gilt-paz2xlvdvo.vercel.app/",
     bgImageSrc: "/projects/portfolio-image.jpg",
-    title: "Portfolio Website",
+    title: "Мой сайт портфолио",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
   },
   {
     id: 2,
     href: "https://dmitryoverkin.github.io/Let-s-Fly/",
     bgImageSrc: "/projects/lets-fly-image.jpg",
-    title: "Let's Fly Website",
+    title: "Сайт компании «Let's Fly»",
     technologies: ["JavaScript", "GSAP", "Scss", "Prepros"],
   },
   {
     id: 3,
     href: "https://dmitryoverkin.github.io/YourTour-SNP_FE_intership/",
     bgImageSrc: "/projects/your-tour-image.jpg",
-    title: "Yout Tour Website",
+    title: "Сайт компании «YourTour»",
     technologies: ["JavaScript", "Scss", "HTML", "Gulp"],
   },
 ];

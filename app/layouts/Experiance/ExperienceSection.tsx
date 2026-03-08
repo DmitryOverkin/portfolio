@@ -57,7 +57,7 @@ const ExperienceSection = () => {
     <section id="experience" className="pt-15 pb-10">
       <div ref={sectionRef}>
         <div className="mb-12">
-          <SectionLogo name="Experience" />
+          <SectionLogo name="Опыт" />
         </div>
 
         <div className="flex flex-col justify-between md:flex-row md:items-end">
@@ -65,15 +65,15 @@ const ExperienceSection = () => {
             className="text-4xl mb-6 text-left max-w-70
             md:text-6xl md:max-w-120 lg:max-w-150"
           >
-            A Yearly snapshot of my developing growth
+            Мой путь в разработке
           </h2>
 
           <p
             className="flex text-gray-500 ml-auto text-right mb-6 max-w-70
             md:max-w-110 md:text-xl"
           >
-            A snapshot of my growth from a computer science student to a
-            professional front-end engineer.
+            От студента до профессионального
+            разрабочика.
           </p>
         </div>
 
